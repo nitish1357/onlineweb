@@ -8,7 +8,13 @@ const Register = () => {
       <form className="form">
         <Logo />
         <h4>Register</h4>
-        <FormRow type="text" name="name" defaultValue="john" />
+        <FormRow
+          type="text"
+          name="name"
+          defaultValue="john"
+          autoFocus={true}
+          required
+        />
         <FormRow
           type="text"
           name="lastName"

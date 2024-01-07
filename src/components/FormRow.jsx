@@ -1,4 +1,14 @@
-const FormRow = ({ type, name, labelText, defaultValue = '' }) => {
+const FormRow = ({
+  type,
+  name,
+  labelText,
+  defaultValue = '',
+  autoFocus,
+  required,
+}) => {
+  const isAutoFocus = autoFocus === true ? autoFocus : '';
+  const isRequired = required === true ? required : '';
+
   return (
     <div className="form-row">
       <label htmlFor={name} className="form-label">
@@ -10,7 +20,8 @@ const FormRow = ({ type, name, labelText, defaultValue = '' }) => {
         name={name}
         className="form-input"
         defaultValue={defaultValue}
-        required
+        autoFocus={isAutoFocus}
+        required={isRequired}
       />
     </div>
   );
